@@ -1,0 +1,51 @@
+{
+    "batchcomplete": true,
+    "query": {
+        "pages": [
+            {
+                "pageid": 736,
+                "ns": 0,
+                "title": "Albert Einstein",
+                "thumbnail": {
+                    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Einstein_1921_by_F_Schmutzer_-_restoration.jpg/76px-Einstein_1921_by_F_Schmutzer_-_restoration.jpg",
+                    "width": 76,
+                    "height": 100
+                },
+                "pageimage": "Einstein_1921_by_F_Schmutzer_-_restoration.jpg",
+                "contentmodel": "wikitext",
+                "pagelanguage": "en",
+                "pagelanguagehtmlcode": "en",
+                "pagelanguagedir": "ltr",
+                "touched": "2022-11-25T14:45:30Z",
+                "lastrevid": 1123286260,
+                "length": 209869,
+                "fullurl": "https://en.wikipedia.org/wiki/Albert_Einstein",
+                "editurl": "https://en.wikipedia.org/w/index.php?title=Albert_Einstein&action=edit",
+                "canonicalurl": "https://en.wikipedia.org/wiki/Albert_Einstein",
+                "extract": "Albert Einstein ( EYEN-styne; German: [ˈalbɛʁt ˈʔaɪnʃtaɪn] (listen); 14 March 1879 – 18 April 1955) was a German-born theoretical physicist, widely acknowledged to be one of the greatest and most influential physicists of all time. Einstein is best known for..."
+            },
+            {
+                "pageid": 25409,
+                "ns": 0,
+                "title": "Reptile",
+                "thumbnail": {
+                    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Reptiles_2021_collage.jpg/100px-Reptiles_2021_collage.jpg",
+                    "width": 100,
+                    "height": 91
+                },
+                "pageimage": "Reptiles_2021_collage.jpg",
+                "contentmodel": "wikitext",
+                "pagelanguage": "en",
+                "pagelanguagehtmlcode": "en",
+                "pagelanguagedir": "ltr",
+                "touched": "2022-11-24T20:15:13Z",
+                "lastrevid": 1123631969,
+                "length": 132692,
+                "fullurl": "https://en.wikipedia.org/wiki/Reptile",
+                "editurl": "https://en.wikipedia.org/w/index.php?title=Reptile&action=edit",
+                "canonicalurl": "https://en.wikipedia.org/wiki/Reptile",
+                "extract": "Reptiles, as most commonly defined are the animals in the class Reptilia ( rep-TIL-ee), a grouping comprising all sauropsids except birds. Living reptiles comprise turtles, crocodilians, squamates (lizards and snakes) and rhynchocephalians (tuatara). As of..."
+            }
+        ]
+    }
+}

@@ -1,17 +1,25 @@
 # WikipediaGoApi
 Wikipedia Go Api is a simple wrapper for some wikipedia api endpoints
 
-## WIP
-### OpenSearch
-https://en.wikipedia.org/w/api.php?action=help&modules=opensearch
-- profile: fuzzy/engine_autoselect
-- redirects: resolve
 
+## OpenSearch
+Search for articles given a part of the title.
+Example:
+```go
+cl := client.MakeClient()
+res, err := cl.GetOpenSearch(opensearch.OpenSearchArgs{
+    Query: "Te",
+})
+if err != nil {
+    panic(err)
+}
+fmt.Printf("%+v", res)
+```
+
+## Query
+Search for article info using 
+
+## WIP
 ### Parse
 https://en.wikipedia.org/w/api.php?action=help&modules=parse
 - title/pageid
-
-### Query
-https://en.wikipedia.org/w/api.php?action=help&modules=query
-- prop
-- list

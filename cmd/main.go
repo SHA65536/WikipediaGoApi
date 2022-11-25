@@ -3,17 +3,22 @@ package main
 import (
 	"fmt"
 
-	wiki "github.com/SHA65536/WikipediaGoApi/client"
+	"github.com/SHA65536/WikipediaGoApi/client"
 	"github.com/SHA65536/WikipediaGoApi/opensearch"
 )
 
 func main() {
-	client := wiki.MakeClient()
-	res, err := client.GetOpenSearch(opensearch.OpenSearchArgs{
+	cl := client.MakeClient()
+	res1, err := cl.GetOpenSearch(opensearch.OpenSearchArgs{
 		Query: "Te",
 	})
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("%+v", res)
+	fmt.Printf("%+v\n\n", res1)
+	res2, err := cl.GetQuerySearch([]string{"Albert Einstein", "Reptile"})
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("%+v\n\n", res2)
 }

@@ -78,7 +78,6 @@ func (args *OpenSearchArgs) ToQuery(base region.Region) (string, error) {
 	}
 
 	res.RawQuery = values.Encode()
-
 	return res.String(), nil
 }
 
