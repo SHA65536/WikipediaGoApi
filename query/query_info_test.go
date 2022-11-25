@@ -11,16 +11,16 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-//go:embed test_data.json
+//go:embed test_data_info.json
 var testQueryJson []byte
 
-var expectedOpenSearchJson = QueryResult{
-	[]QueryResultPage{
+var expectedQueryInfoJson = QueryInfoResult{
+	[]QueryInfoResultPage{
 		{
 			Id:    736,
 			Ns:    namespace.Main,
 			Title: "Albert Einstein",
-			Thumbnail: QueryResultThumbnail{
+			Thumbnail: QueryInfoResultThumbnail{
 				Source: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Einstein_1921_by_F_Schmutzer_-_restoration.jpg/76px-Einstein_1921_by_F_Schmutzer_-_restoration.jpg",
 				Width:  76,
 				Height: 100,
@@ -33,7 +33,7 @@ var expectedOpenSearchJson = QueryResult{
 			Id:    25409,
 			Ns:    namespace.Main,
 			Title: "Reptile",
-			Thumbnail: QueryResultThumbnail{
+			Thumbnail: QueryInfoResultThumbnail{
 				Source: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Reptiles_2021_collage.jpg/100px-Reptiles_2021_collage.jpg",
 				Width:  100,
 				Height: 91,
@@ -45,21 +45,21 @@ var expectedOpenSearchJson = QueryResult{
 	},
 }
 
-func TestUnmarshalQueryResult(t *testing.T) {
-	var Result QueryResult
+func TestUnmarshalQueryInfoResult(t *testing.T) {
+	var Result QueryInfoResult
 	assert := assert.New(t)
 	err := json.Unmarshal(testQueryJson, &Result)
 	assert.Nil(err, "should not error parsing example")
-	assert.Equal(expectedOpenSearchJson, Result, "should equal expected struct")
+	assert.Equal(expectedQueryInfoJson, Result, "should equal expected struct")
 }
 
 var expectedQueryUrl = "https://en.wikipedia.org/w/api.php?action=query&exchars=256&exintro=true&explaintext=true&format=json&formatversion=2&inprop=url&pithumbsize=100&prop=pageimages%7Cinfo%7Cextracts&titles=Albert+Einstein%7CReptile"
 
 var inputQueryTitles = []string{"Albert Einstein", "Reptile"}
 
-func TestQueryQueryToString(t *testing.T) {
+func TestQueryInfoToString(t *testing.T) {
 	assert := assert.New(t)
-	val, err := QueryToUrl(region.English, inputQueryTitles)
+	val, err := InfoQueryToUrl(region.English, inputQueryTitles)
 	assert.Nil(err, "should not error parsing query")
 	assert.Equal(expectedQueryUrl, val)
 }

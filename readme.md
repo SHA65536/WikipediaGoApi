@@ -24,10 +24,15 @@ res, err := cl.GetQuerySearch([]string{"Albert Einstein", "Reptile"})
 if err != nil {
     panic(err)
 }
-fmt.Printf("%+v", res2)
+fmt.Printf("%+v", res)
 ```
 
-## WIP
-### Parse
-https://en.wikipedia.org/w/api.php?action=help&modules=parse
-- title/pageid
+Search for links within an article
+```go
+cl := client.MakeClient()
+res, err := cl.GetAllQueryLinks("Turtle")
+if err != nil {
+    panic(err)
+}
+fmt.Printf("%+v", res)
+```

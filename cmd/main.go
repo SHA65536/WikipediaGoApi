@@ -21,4 +21,9 @@ func main() {
 		panic(err)
 	}
 	fmt.Printf("%+v\n\n", res2)
+	res3, err := cl.GetAllQueryLinks("Turtle")
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(len(res3), res3)
 }

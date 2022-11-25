@@ -11,30 +11,30 @@ import (
 	"github.com/SHA65536/WikipediaGoApi/region"
 )
 
-type QueryResult struct {
-	Pages []QueryResultPage
+type QueryInfoResult struct {
+	Pages []QueryInfoResultPage
 }
 
-type QueryResultPage struct {
-	Id        int                  `json:"pageid"`
-	Ns        ns.Namespace         `json:"ns"`
-	Title     string               `json:"title"`
-	Thumbnail QueryResultThumbnail `json:"thumbnail"`
-	Touched   time.Time            `json:"touched"`
-	URL       string               `json:"canonicalurl"`
-	Extract   string               `json:"extract"`
+type QueryInfoResultPage struct {
+	Id        int                      `json:"pageid"`
+	Ns        ns.Namespace             `json:"ns"`
+	Title     string                   `json:"title"`
+	Thumbnail QueryInfoResultThumbnail `json:"thumbnail"`
+	Touched   time.Time                `json:"touched"`
+	URL       string                   `json:"canonicalurl"`
+	Extract   string                   `json:"extract"`
 }
 
-type QueryResultThumbnail struct {
+type QueryInfoResultThumbnail struct {
 	Source string `json:"source"`
 	Width  int    `json:"width"`
 	Height int    `json:"height"`
 }
 
-func (r *QueryResult) UnmarshalJSON(data []byte) error {
+func (r *QueryInfoResult) UnmarshalJSON(data []byte) error {
 	var Temp = struct {
 		Query struct {
-			Res []QueryResultPage `json:"pages"`
+			Res []QueryInfoResultPage `json:"pages"`
 		} `json:"query"`
 	}{}
 	err := json.Unmarshal(data, &Temp)
@@ -45,7 +45,7 @@ func (r *QueryResult) UnmarshalJSON(data []byte) error {
 	return nil
 }
 
-func QueryToUrl(base region.Region, titles []string) (string, error) {
+func InfoQueryToUrl(base region.Region, titles []string) (string, error) {
 	var values = url.Values{}
 	res, err := url.Parse(string(base))
 	if err != nil {
