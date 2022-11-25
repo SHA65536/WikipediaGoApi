@@ -59,7 +59,7 @@ var inputQueryArgs = OpenSearchArgs{
 
 func TestOpenSearchQueryToString(t *testing.T) {
 	assert := assert.New(t)
-	val, err := inputQueryArgs.ToQuery(string(region.English))
+	val, err := inputQueryArgs.ToQuery(region.English)
 	assert.Nil(err, "should not error parsing query")
 	assert.Equal(expectedOpenSearchQuery, val)
 }

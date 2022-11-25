@@ -8,6 +8,7 @@ import (
 	"strings"
 
 	ns "github.com/SHA65536/WikipediaGoApi/namespace"
+	"github.com/SHA65536/WikipediaGoApi/region"
 )
 
 type SearchProfile string
@@ -36,9 +37,9 @@ type OpenSearchArgs struct {
 }
 
 // Formats the search arguments into a url
-func (args *OpenSearchArgs) ToQuery(base string) (string, error) {
+func (args *OpenSearchArgs) ToQuery(base region.Region) (string, error) {
 	var values = url.Values{}
-	res, err := url.Parse(base)
+	res, err := url.Parse(string(base))
 	if err != nil {
 		return "", err
 	}
