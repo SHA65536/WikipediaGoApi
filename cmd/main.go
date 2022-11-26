@@ -16,14 +16,25 @@ func main() {
 		panic(err)
 	}
 	fmt.Printf("%+v\n\n", res1)
+
 	res2, err := cl.GetQuerySearch([]string{"Albert Einstein", "Reptile"})
 	if err != nil {
 		panic(err)
 	}
 	fmt.Printf("%+v\n\n", res2)
-	res3, err := cl.GetAllQueryLinks("Turtle")
+
+	res3, err := cl.GetQueryLinksWithContinue("Turtle")
 	if err != nil {
 		panic(err)
 	}
 	fmt.Println(len(res3), res3)
+
+	var count int
+	for gen := cl.GetAllArticles(); count < 10000; count++ {
+		if val, cont := gen.Next(); cont {
+			fmt.Printf("%04d: %v\n", count, val)
+		} else {
+			break
+		}
+	}
 }

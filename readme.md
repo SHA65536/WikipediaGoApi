@@ -30,9 +30,22 @@ fmt.Printf("%+v", res)
 Search for links within an article
 ```go
 cl := client.MakeClient()
-res, err := cl.GetAllQueryLinks("Turtle")
+res, err := cl.GetQueryLinksWithContinue("Turtle")
 if err != nil {
     panic(err)
 }
 fmt.Printf("%+v", res)
+```
+
+List all pages
+```go
+cl := client.MakeClient()
+var count int
+for gen := cl.GetAllArticles(); count < 10000; count++ {
+    if val, cont := gen.Next(); cont {
+        fmt.Printf("%04d: %v\n", count, val)
+    } else {
+        break
+    }
+}
 ```

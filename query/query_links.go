@@ -54,5 +54,3 @@ func LinksQueryToUrl(base region.Region, title string, cont string) (string, err
 	res.RawQuery = values.Encode()
 	return res.String(), nil
 }
-
-//https://en.wikipedia.org/w/api.php?action=query&prop=links&titles=Turtle&plnamespace=0&format=json&formatversion=2&pllimit=max
