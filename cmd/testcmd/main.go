@@ -23,7 +23,7 @@ func main() {
 	}
 	fmt.Printf("%+v\n\n", res2)
 
-	res3, err := cl.GetQueryLinksWithContinue("Turtle")
+	res3, err := cl.GetQueryLinksWithContinue("🙏🏿")
 	if err != nil {
 		panic(err)
 	}
